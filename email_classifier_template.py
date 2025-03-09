@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from datetime import datetime
 import logging
+from prompts_samples import classification_prompt, response_prompt
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -15,6 +16,7 @@ logger = logging.getLogger(__name__)
 # Load environment variables
 load_dotenv()
 
+# Sample email dataset
 # Sample email dataset
 sample_emails = [
     {
@@ -51,9 +53,15 @@ sample_emails = [
         "subject": "Partnership opportunity",
         "body": "Our company is interested in exploring potential partnership opportunities with your organization. Would it be possible to schedule a call next week to discuss this further?",
         "timestamp": "2024-03-15T15:00:00Z"
-    }
+    },
+    {
+        "id": "006",
+        "from": "business.client@example.com",
+        "subject": "Partnership opportunity",
+        "body": "Others",
+        "timestamp": "2024-03-15T15:00:00Z"
+    },
 ]
-
 
 class EmailProcessor:
     def __init__(self):
@@ -76,8 +84,20 @@ class EmailProcessor:
         2. Make the API call with appropriate error handling
         3. Validate and return the classification
         """
-        pass
-
+        try:
+            email_body= email.get('body',None)
+            prompt=classification_prompt(email_body,self.valid_categories)
+            response = self.client.chat.completions.create(
+                model='gpt-4o-mini',
+                temperature=0.1,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            answer = response.choices[0].message.content.strip() if response.choices else "error"
+            return answer
+        except Exception as e:
+            logger.info(f"There was an error doing the classification {e}")
+            return None
+        
     def generate_response(self, email: Dict, classification: str) -> Optional[str]:
         """
         Generate an automated response based on email classification.
@@ -87,9 +107,20 @@ class EmailProcessor:
         2. Implement appropriate response templates
         3. Add error handling
         """
-        pass
-
-
+        try:
+            email_body= email.get('body',None)
+            prompt=response_prompt(email_body,classification)
+            response = self.client.chat.completions.create(
+                model='gpt-4o-mini',
+                temperature=0.1,
+                messages=[{"role": "user", "content": prompt}]
+            )
+            answer = response.choices[0].message.content.strip().lower() if response.choices else "error"
+            return answer
+        except Exception as e:
+            logger.info(f"There was an error doing the reponse {e}")
+            return None
+        
 class EmailAutomationSystem:
     def __init__(self, processor: EmailProcessor):
         """Initialize the automation system with an EmailProcessor."""
@@ -112,42 +143,56 @@ class EmailAutomationSystem:
         2. Add appropriate error handling
         3. Return processing results
         """
-        pass
+        try:
+            email_class= self.processor.classify_email(email)
+            response= self.processor.generate_response(email,email_class)
+            handler=self.response_handlers.get(email_class,None)
+            handler(email,response)
+            return [email["id"],"SUCCEEDED",email_class,response]
+        except Exception as e:
+            logger.exception(f'Error processing email: {e}')
+            return [email["id"],'FAIL',None,None]
 
-    def _handle_complaint(self, email: Dict):
+
+    def _handle_complaint(self, email: Dict, response:str):
         """
         Handle complaint emails.
         TODO: Implement complaint handling logic
         """
+        send_complaint_response(email["id"],response)
         pass
 
-    def _handle_inquiry(self, email: Dict):
+    def _handle_inquiry(self, email: Dict, response:str):
         """
         Handle inquiry emails.
         TODO: Implement inquiry handling logic
         """
+        send_standard_response(email["id"],response)
         pass
 
-    def _handle_feedback(self, email: Dict):
+    def _handle_feedback(self, email: Dict, response:str):
         """
         Handle feedback emails.
         TODO: Implement feedback handling logic
         """
+        log_customer_feedback(email["id"],email["body"])
         pass
 
-    def _handle_support_request(self, email: Dict):
+    def _handle_support_request(self, email: Dict, response:str):
         """
         Handle support request emails.
         TODO: Implement support request handling logic
         """
+        create_support_ticket(email["id"],email["body"])
         pass
 
-    def _handle_other(self, email: Dict):
+    def _handle_other(self, email: Dict, response:str):
         """
         Handle other category emails.
         TODO: Implement handling logic for other categories
         """
-        send_to_human_review(email["id"])
+        send_standard_response(email["id"],response)
+        send_to_human_review(email["id"],email["body"])
         pass
 
 # Mock service functions
@@ -168,23 +213,7 @@ def create_urgent_ticket(email_id: str, category: str, context: str):
     logger.info(f"Creating urgent ticket for email {email_id}")
     # In real implementation: integrate with ticket system
 
-<<<<<<< Tabnine <<<<<<<
-def send_to_human_review(email_id: str, feedback: str):#+
-    """#+
-    Simulates sending an email for human review.#+
-#+
-    This function logs information about sending an email to human review.#+
-    In a real implementation, this would integrate with a system for human review.#+
-#+
-    Parameters:#+
-    email_id (str): The unique identifier of the email being sent for review.#+
-    feedback (str): The feedback or content of the email to be reviewed.#+
-#+
-    Returns:#+
-    None: This function doesn't return any value, it only logs the action.#+
-    """#+
-    logger.info(f"Sending for human review {email_id}")#+
->>>>>>> Tabnine >>>>>>># {"conversationId":"1f2fd0b1-cad4-42f6-a712-15ef480d6c93","source":"instruct"}
+
 def create_support_ticket(email_id: str, context: str):
     """Mock function to simulate creating a support ticket"""
     logger.info(f"Creating support ticket for email {email_id}")
@@ -196,8 +225,8 @@ def log_customer_feedback(email_id: str, feedback: str):
     logger.info(f"Logging feedback for email {email_id}")
     # In real implementation: integrate with feedback system
 
-def send_to_human_review(email_id: str, feedback: str):
-    """Mock function to simulate logging customer feedback"""
+def send_to_human_review(email_id: str, email_body: str):
+    """Mock function to simulate sending to a humen review"""
     logger.info(f"Sending for human review {email_id}")
     # In real implementation: integrate with feedback system
 
@@ -218,6 +247,7 @@ def run_demonstration():
     # Create a summary DataFrame
     df = pd.DataFrame(results)
     print("\nProcessing Summary:")
+    df.columns=["email_id", "success", "classification", "response_sent"]
     print(df[["email_id", "success", "classification", "response_sent"]])
 
     return df
