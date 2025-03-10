@@ -1,0 +1,205 @@
+email_id,status,classification,groundtruth,response_sent
+001,SUCCEEDED,complaint,complaint,"Dear customer,
+
+Thank you for reaching out and sharing your concerns regarding your order #12345. I sincerely apologize for the inconvenience you have experienced with the damaged item. We take all complaints seriously and want to assure you that we are currently investigating the issue.
+
+Could you please provide more details about the damage to the item? This will help us expedite the resolution process and ensure that we address your concerns appropriately. In the meantime, I have forwarded your case to our support team for further review.
+
+Once again, we apologize for the trouble and appreciate your patience as we work to resolve this matter. If you have any further questions or need assistance, feel free to contact us.
+
+Best regards,  
+CadreAI"
+002,SUCCEEDED,inquiry,inquiry,"Dear customer,
+
+Thank you for your inquiry regarding our premium package. I’m happy to provide you with the information you need.
+
+I'm pleased to inform you that our premium package is fully compatible with Mac OS, ensuring a seamless experience for all our users. You can enjoy all the features and benefits without any issues on your Mac.
+
+If you need further clarification or have additional questions, don’t hesitate to reach out. We're here to assist!
+
+Best regards,  
+CadreAI"
+003,SUCCEEDED,feedback,feedback,"Dear customer,
+
+Thank you for taking the time to share your feedback with us. We greatly appreciate your insights and are glad to know that you had a positive experience with our support team, especially with Sarah. It's wonderful to hear that she went above and beyond to help resolve your issue.
+
+We are constantly striving to improve, and your feedback helps us in our efforts. If there’s anything more we can do for you, or if you have additional suggestions, please let us know.
+
+Thanks again for your support!
+
+Best regards,  
+CadreAI"
+004,SUCCEEDED,support_request,support_request,"Dear customer,
+
+Thank you for reaching out to our support team. We have received your support request regarding the error code 5123, and we understand how frustrating this can be.
+
+To assist you better, could you please provide us with more details, such as the specific steps you took before encountering the error, any additional error messages you may have seen, and your system information (like operating system and version)? This information will help us address your concern more efficiently.
+
+Our team is dedicated to resolving your issue as soon as possible, and we appreciate your patience as we work through this together.
+
+We will keep you updated on the progress, and please don’t hesitate to contact us if you have any additional questions.
+
+Best regards,  
+CadreAI"
+005,SUCCEEDED,inquiry,inquiry,"Dear customer,
+
+Thank you for your inquiry regarding potential partnership opportunities with our organization. I’m happy to provide you with the information you need.
+
+We are always open to exploring new collaborations that can bring mutual benefits. I would be glad to schedule a call next week to discuss how our organizations can work together effectively. Please let me know your availability, and I will do my best to accommodate.
+
+If you need further clarification or have additional questions, don’t hesitate to reach out. We're here to assist!
+
+Best regards,  
+CadreAI"
+006,SUCCEEDED,support_request,inquiry,"Dear customer,
+
+Thank you for reaching out to our support team. We understand how important it is for you to receive your package, and we apologize for the inconvenience caused by the delay.
+
+To assist you better, could you please provide your order number and any tracking information you may have? This will help us address your concern more efficiently. Our team is dedicated to resolving your issue as soon as possible.
+
+We will keep you updated on the progress, and please don’t hesitate to contact us if you have any additional questions.
+
+Best regards,  
+CadreAI"
+007,SUCCEEDED,inquiry,inquiry,"Dear customer,
+
+Thank you for your inquiry regarding bulk orders for your company. I’m happy to provide you with the information you need.
+
+We do offer discounts for large purchases, and the specifics can vary depending on the quantity and type of products you are interested in. I would love to discuss your needs in more detail to ensure we can provide you with the best possible pricing and options.
+
+If you need further clarification or have additional questions, don’t hesitate to reach out. We're here to assist!
+
+Best regards,  
+CadreAI"
+008,SUCCEEDED,feedback,feedback,"Dear customer,
+
+Thank you for taking the time to share your feedback with us. We greatly appreciate your insights and are glad to know that you have been enjoying our services for years! It’s wonderful to hear that you consider us the best, and your continued support means a lot to our team.
+
+We are constantly striving to improve, and your feedback helps us in our efforts. If there’s anything more we can do for you, or if you have additional suggestions, please let us know. We’re here to ensure you have the best experience possible.
+
+Thanks again for your support!
+
+Best regards,  
+CadreAI"
+009,SUCCEEDED,support_request,support_request,"Dear customer,
+
+Thank you for reaching out to our support team. We’re sorry to hear that you’re experiencing a crash when trying to save a file. We understand how frustrating this can be, and we appreciate your patience as we work to resolve the issue.
+
+To assist you better, could you please provide us with more details, such as any error messages you receive, your operating system, and the version of the software you are using? This information will help us address your concern more efficiently. Our team is dedicated to resolving your issue as soon as possible.
+
+We will keep you updated on the progress, and please don’t hesitate to contact us if you have any additional questions.
+
+Best regards,  
+CadreAI"
+010,SUCCEEDED,inquiry,inquiry,"Dear customer,
+
+Thank you for your inquiry regarding potential collaborations with your marketing agency. I’m happy to provide you with the information you need.
+
+We are always open to exploring new partnerships that can enhance our services and reach. I would love to hear more about your agency's strengths and how we might align our efforts for mutual benefit. Perhaps we could schedule a call or meeting to discuss this in more detail?
+
+If you need further clarification or have additional questions, don’t hesitate to reach out. We're here to assist!
+
+Best regards,  
+CadreAI"
+011,SUCCEEDED,complaint,complaint,"Dear customer,
+
+Thank you for reaching out and sharing your concerns regarding the unauthorized charge on your credit card. I sincerely apologize for the inconvenience you have experienced. We take all complaints seriously and want to assure you that we are currently investigating the issue.
+
+Could you please provide more details about the charge, such as the date and amount? This will help us expedite the resolution process. In the meantime, I have forwarded your case to our support team for further review.
+
+Once again, we apologize for the trouble and appreciate your patience. If you have any further questions, feel free to contact us.
+
+Best regards,  
+CadreAI"
+012,SUCCEEDED,inquiry,inquiry,"Dear customer,
+
+Thank you for your inquiry regarding our warranty policy. I’m happy to provide you with the information you need.
+
+Our warranty covers defects in materials and workmanship for a period of one year from the date of purchase. This means that if you encounter any issues due to manufacturing defects, we will repair or replace the product at no additional cost to you. Please note that the warranty does not cover damages resulting from misuse, accidents, or normal wear and tear.
+
+If you need further clarification or have additional questions, don’t hesitate to reach out. We're here to assist!
+
+Best regards,  
+CadreAI"
+013,SUCCEEDED,feedback,feedback,"Dear customer,
+
+Thank you for taking the time to share your feedback with us. We greatly appreciate your insights and are glad to know that you had a positive experience with our support team.
+
+It’s wonderful to hear that you felt cared for during your interaction with us. We truly value our customers and strive to provide the best service possible. Your kind words motivate us to keep improving and ensuring that every experience is a great one.
+
+If there’s anything more we can do for you, or if you have additional suggestions, please let us know. We’re here to help!
+
+Thanks again for your support!
+
+Best regards,  
+CadreAI"
+014,SUCCEEDED,support_request,support_request,"Dear customer,
+
+Thank you for reaching out to our support team. We have received your support request regarding your account access issue and are currently looking into it.
+
+To assist you better, could you please provide any error messages you are encountering when trying to log in, as well as the device and browser you are using? This information will help us address your concern more efficiently. Our team is dedicated to resolving your issue as soon as possible.
+
+We understand how important it is for you to access your account, and we appreciate your patience as we work to resolve this matter. We will keep you updated on the progress, and please don’t hesitate to contact us if you have any additional questions.
+
+Best regards,  
+CadreAI"
+015,SUCCEEDED,inquiry,other,"Dear customer,
+
+Thank you for your inquiry regarding the impact of AI on human jobs. I’m happy to provide you with my thoughts on this important topic.
+
+AI has the potential to transform various industries by automating repetitive tasks and enhancing efficiency. However, rather than outright replacing human jobs, it is more likely to change the nature of work. Many roles may evolve, requiring new skills and adaptability, while new job opportunities may emerge in areas that we can't yet fully envision. The key will be for individuals and organizations to embrace lifelong learning and upskilling to stay relevant in this changing landscape.
+
+If you need further clarification or have additional questions, don’t hesitate to reach out. We're here to assist!
+
+Best regards,  
+CadreAI"
+016,SUCCEEDED,other,other,"Dear customer,
+
+Thank you for your email. We appreciate you reaching out to us with your query regarding SuperAI. It sounds like an exciting new product, and we’re happy to help you with any questions or information you may need about it.
+
+Please let us know how we can further assist you or clarify any details regarding SuperAI.
+
+We look forward to your response!
+
+Best regards,  
+CadreAI"
+017,SUCCEEDED,other,other,"Dear customer,
+
+Thank you for your email. We appreciate you reaching out to us with your query. It appears that your message is in regard to something outside our typical support areas, but we’re happy to help.
+
+If you could provide a bit more detail about your concern or question, we would be glad to assist you further. Your satisfaction is important to us, and we want to ensure you receive the information you need.
+
+We look forward to your response!
+
+Best regards,  
+CadreAI"
+018,SUCCEEDED,inquiry,other,"Dear customer,
+
+Thank you for your inquiry regarding my visit. I’m happy to provide you with the information you need.
+
+I truly miss you all as well! I’m currently planning my schedule and hope to visit soon. It would be wonderful to catch up and spend some quality time together.
+
+If you need further clarification or have additional questions, don’t hesitate to reach out. We're here to assist!
+
+Best regards,  
+CadreAI"
+019,SUCCEEDED,other,other,"Dear customer,
+
+Thank you for your email and for sending over the monthly bill. We appreciate you reaching out to us with your query. It appears that your message is in regard to something outside our typical support areas, but we’re happy to help.
+
+If you have any specific questions or need clarification on any items in the bill, please let us know how we can further assist you. Your satisfaction is important to us, and we want to ensure everything is clear.
+
+We look forward to your response!
+
+Best regards,  
+CadreAI"
+020,SUCCEEDED,other,other,"Dear customer,
+
+Thank you for your email. We appreciate you reaching out to us with your query. It appears that your message is in regard to your recent Netflix subscription payment, and we’re happy to help.
+
+We hope you enjoy all the fantastic shows and movies available to you! If you have any questions or need assistance with your account, please let us know how we can further assist you or clarify any information you may need.
+
+We look forward to your response!
+
+Best regards,  
+CadreAI"
